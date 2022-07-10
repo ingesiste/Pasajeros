@@ -8,14 +8,13 @@ public class Viaje
     private String origen;
     private String destino;
     private GregorianCalendar horaSalida;
-    private GregorianCalendar horaLlegada;
-    
+    private GregorianCalendar horaLlegada;  
     private Pasajero[] pasajeros;
-    private ArrayList<Pasajero> listaPasajeros;
-    
+    private ArrayList<Pasajero> listaPasajeros;    
     private int capacidad;
     private int cont;
     private Bus bus;
+    private Buseta buseta;
     
     public Viaje() {}
     
@@ -25,12 +24,12 @@ public class Viaje
         this.destino = destino;
         this.horaSalida = horaSalida;
         this.horaLlegada = horaLlegada;
-        this.capacidad = capacidad;
-        
+        this.capacidad = capacidad;        
         this.pasajeros = new Pasajero[capacidad];
-        this.listaPasajeros = new ArrayList<Pasajero>();
-                
+        this.listaPasajeros = new ArrayList<Pasajero>();                
         this.cont = 0;
+        buseta = new Buseta();
+        
     }
     
     public String getOrigen()

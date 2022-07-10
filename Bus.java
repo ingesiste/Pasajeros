@@ -1,7 +1,6 @@
-public class Bus
+public class Bus extends Vehiculo
 {
     private int numPuestos;
-    private String placa;
     private String tipo;
     private int numInterno;
     
@@ -10,7 +9,6 @@ public class Bus
     public Bus(int numPuestos, String placa, String tipo, int numInterno) 
     {
             this.numPuestos = numPuestos;
-            this.placa = placa;
             this.tipo = tipo;
             this.numInterno = numInterno;
     }
@@ -22,14 +20,6 @@ public class Bus
     public void setNumPuestos(int numPuestos){
         this.numPuestos = numPuestos;
     }//end method setNumPuestos
-
-    public String getPlaca(){
-        return this.placa;
-    }//end method getPlaca
-
-    public void setPlaca(String placa){
-        this.placa = placa;
-    }//end method setPlaca
 
     /**GET Method Propertie tipo*/
     public String getTipo(){
@@ -49,9 +39,11 @@ public class Bus
     /**SET Method Propertie numInterno*/
     public void setNumInterno(int numInterno){
         this.numInterno = numInterno;
-    }//end method setNumInterno
-
-//End GetterSetterExtension Source Code
-
+    }
+    
+    public String getNombreEmpresa()
+    {
+        return "Brasilia";
+    }
 
 }//End class
