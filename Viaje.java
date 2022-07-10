@@ -11,8 +11,7 @@ public class Viaje
     private GregorianCalendar horaLlegada;
     
     private Pasajero[] pasajeros;
-    private ArrayList<Pasajero> listaPasajeros;
-    
+        
     private int capacidad;
     private int cont;
     private Bus bus;
@@ -28,8 +27,6 @@ public class Viaje
         this.capacidad = capacidad;
         
         this.pasajeros = new Pasajero[capacidad];
-        this.listaPasajeros = new ArrayList<Pasajero>();
-                
         this.cont = 0;
     }
     
@@ -109,9 +106,7 @@ public class Viaje
     public void anadirPasajero(Pasajero p)
     {
         this.pasajeros[this.cont] = p;
-        this.cont++;
-        
-        this.listaPasajeros.add(p);
+        this.cont++;        
     }
     
     public String buscarPasajeros(String busqueda)
@@ -124,25 +119,7 @@ public class Viaje
             {
                 resultado = resultado + this.pasajeros[i].toString() + "\n";
             }                
-        }
-        
-        // Busqueda con lista
-        for (int i=0; i<this.listaPasajeros.size(); i++)        
-        {
-            if (this.listaPasajeros.get(i).getNombre().equals(busqueda) || (this.listaPasajeros.get(i).getApellido().equals(busqueda) || (this.listaPasajeros.get(i).getNumDocumento()+"").equals(busqueda)))
-            {
-                resultado = resultado + this.listaPasajeros.get(i).toString() + "\n";
-            }                
-        }
-        
-        // Busqueda con lista 
-        for (Pasajero p : this.listaPasajeros)
-        {
-            if (p.getNombre().equals(busqueda) || p.getApellido().equals(busqueda) || (p.getNumDocumento()+"").equals(busqueda))
-            {
-                resultado = resultado + p.toString() + "\n";
-            }
-        }        
+        }              
         return resultado;
     }
     
